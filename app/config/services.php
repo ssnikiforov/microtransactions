@@ -35,23 +35,23 @@ $di->setShared('config', function () {
 //});
 
 // Simple database connection to localhost
-//$di->set('mongo', function() {
-//    $mongo = new Mongo();
-//    return $mongo->selectDb("test");
-//}, true);
+$di->set('mongo', function() {
+    $mongo = new Mongo();
+    return $mongo->selectDb("test");
+}, true);
 
 //MongoDB Database
-$di->set('MongoDB', function () use ($config) {
-    if (!$config->database->mongo->username OR !$config->database->mongo->password) {
-        $mongo = new MongoClient('mongodb://' . $config->database->mongo->host);
-    } else {
-        $mongo = new MongoClient("mongodb://" . $config->database->mongo->username . ":" .
-            $config->database->mongo->password . "@" . $config->database->mongo->host,
-            ["db" => $config->database->mongo->dbname]);
-    }
-
-    return $mongo->selectDb($config->database->mongo->dbname);
-}, true);
+//$di->set('MongoDB', function () use ($config) {
+//    if (!$config->database->mongo->username OR !$config->database->mongo->password) {
+//        $mongo = new MongoClient('mongodb://' . $config->database->mongo->host);
+//    } else {
+//        $mongo = new MongoClient("mongodb://" . $config->database->mongo->username . ":" .
+//            $config->database->mongo->password . "@" . $config->database->mongo->host,
+//            ["db" => $config->database->mongo->dbname]);
+//    }
+//
+//    return $mongo->selectDb($config->database->mongo->dbname);
+//}, true);
 
 $di->set('collectionManager', function () {
     return new Phalcon\Mvc\Collection\Manager();

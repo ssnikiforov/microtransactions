@@ -17,7 +17,7 @@ return new \Phalcon\Config([
         'host' => 'localhost',
         'username' => 'root',
         'password' => 'root',
-        'dbname' => 'microtransactions_system',
+        'dbname' => 'test',
     ]
 ],
 'application' => [
