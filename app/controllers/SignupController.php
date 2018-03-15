@@ -10,7 +10,7 @@ class SignupController extends Controller
 {
     public function indexAction()
     {
-
+        echo '<h1>hihi</h1>';
     }
 
     public function registerAction()
