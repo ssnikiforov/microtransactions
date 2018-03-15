@@ -3,10 +3,11 @@
 use Phalcon\Cli\Dispatcher;
 
 /**
-* Set the default namespace for dispatcher
-*/
-$di->setShared('dispatcher', function() {
+ * Set the default namespace for dispatcher
+ */
+$di->setShared('dispatcher', function () {
     $dispatcher = new Dispatcher();
     $dispatcher->setDefaultNamespace('Microtransactions\Modules\Cli\Tasks');
+
     return $dispatcher;
 });

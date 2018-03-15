@@ -1,4 +1,5 @@
 <?php
+
 namespace Microtransactions\Modules\Cli\Tasks;
 
 class VersionTask extends \Phalcon\Cli\Task

@@ -1,4 +1,5 @@
 <?php
+
 namespace Microtransactions\Modules\Cli;
 
 use Phalcon\DiInterface;

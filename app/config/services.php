@@ -1,9 +1,7 @@
 <?php
 
-use Phalcon\Loader;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
-
 
 /**
  * Shared configuration service
@@ -47,13 +45,15 @@ $di->set('MongoDB', function () use ($config) {
     if (!$config->database->mongo->username OR !$config->database->mongo->password) {
         $mongo = new MongoClient('mongodb://' . $config->database->mongo->host);
     } else {
-        $mongo = new MongoClient("mongodb://" . $config->database->mongo->username . ":" . $config->database->mongo->password . "@" . $config->database->mongo->host, ["db" => $config->database->mongo->dbname]);
+        $mongo = new MongoClient("mongodb://" . $config->database->mongo->username . ":" .
+            $config->database->mongo->password . "@" . $config->database->mongo->host,
+            ["db" => $config->database->mongo->dbname]);
     }
 
     return $mongo->selectDb($config->database->mongo->dbname);
-}, TRUE);
+}, true);
 
-$di->set('collectionManager', function(){
+$di->set('collectionManager', function () {
     return new Phalcon\Mvc\Collection\Manager();
 }, true);
 
@@ -72,7 +72,7 @@ $di->setShared('voltShared', function ($view) {
 
     $volt = new VoltEngine($view, $this);
     $volt->setOptions([
-        'compiledPath' => function($templatePath) use ($config) {
+        'compiledPath' => function ($templatePath) use ($config) {
             $basePath = $config->application->appDir;
             if ($basePath && substr($basePath, 0, 2) == '..') {
                 $basePath = dirname(__DIR__);
@@ -94,8 +94,8 @@ $di->setShared('voltShared', function ($view) {
                 $cacheDir = sys_get_temp_dir();
             }
 
-            if (!is_dir($cacheDir . DIRECTORY_SEPARATOR . 'volt' )) {
-                @mkdir($cacheDir . DIRECTORY_SEPARATOR . 'volt' , 0755, true);
+            if (!is_dir($cacheDir . DIRECTORY_SEPARATOR . 'volt')) {
+                @mkdir($cacheDir . DIRECTORY_SEPARATOR . 'volt', 0755, true);
             }
 
             return $cacheDir . DIRECTORY_SEPARATOR . 'volt' . DIRECTORY_SEPARATOR . $filename;

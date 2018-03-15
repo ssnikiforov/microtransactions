@@ -9,7 +9,7 @@ $loader = new Loader();
  */
 $loader->registerNamespaces([
     'Microtransactions\Models' => APP_PATH . '/common/models/',
-    'Microtransactions'        => APP_PATH . '/common/library/',
+    'Microtransactions' => APP_PATH . '/common/library/',
 ]);
 
 /**
@@ -17,7 +17,7 @@ $loader->registerNamespaces([
  */
 $loader->registerClasses([
     'Microtransactions\Modules\Frontend\Module' => APP_PATH . '/modules/frontend/Module.php',
-    'Microtransactions\Modules\Cli\Module'      => APP_PATH . '/modules/cli/Module.php'
+    'Microtransactions\Modules\Cli\Module' => APP_PATH . '/modules/cli/Module.php'
 ]);
 
 $loader->register();

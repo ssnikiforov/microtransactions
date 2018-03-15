@@ -1,4 +1,5 @@
 <?php
+
 namespace Microtransactions\Modules\Cli\Tasks;
 
 class MainTask extends \Phalcon\Cli\Task

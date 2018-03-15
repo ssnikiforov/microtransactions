@@ -1,4 +1,5 @@
 <?php
+
 namespace Microtransactions\Modules\Frontend\Controllers;
 
 use Phalcon\Mvc\Controller;
