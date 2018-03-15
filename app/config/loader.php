@@ -15,9 +15,9 @@ $loader->registerNamespaces([
 /**
  * Register module classes
  */
-//$loader->registerClasses([
-//    'Microtransactions\Modules\Frontend\Module' => APP_PATH . '/modules/frontend/Module.php',
-//    'Microtransactions\Modules\Cli\Module'      => APP_PATH . '/modules/cli/Module.php'
-//]);
+$loader->registerClasses([
+    'Microtransactions\Modules\Frontend\Module' => APP_PATH . '/modules/frontend/Module.php',
+    'Microtransactions\Modules\Cli\Module'      => APP_PATH . '/modules/cli/Module.php'
+]);
 
 $loader->register();

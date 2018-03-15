@@ -1,11 +1,7 @@
 <?php
+namespace Microtransactions\Modules\Frontend\Controllers;
 
-/**
- * User: Stepan S. Nikiforov (s.nikiforov@innosoft.ru)
- * Date: 14/12/2017
- * Time: 17:24
- */
-class IndexController extends BaseController
+class IndexController extends ControllerBase
 {
     public function initialize() {
         parent::initialize();
