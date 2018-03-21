@@ -12,12 +12,11 @@ $loader->registerNamespaces([
     'Microtransactions'        => APP_PATH . '/common/library/',
 ]);
 
-/**
- * Register module classes
- */
-//$loader->registerClasses([
-//    'Microtransactions\Modules\Frontend\Module' => APP_PATH . '/modules/frontend/Module.php',
-//    'Microtransactions\Modules\Cli\Module'      => APP_PATH . '/modules/cli/Module.php'
-//]);
+$loader->registerDirs(
+    [
+        APP_PATH . '/controllers/',
+        APP_PATH . '/models/',
+    ]
+);
 
 $loader->register();

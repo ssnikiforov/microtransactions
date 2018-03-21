@@ -1,9 +1,11 @@
 <?php
 
-defined('BASE_PATH') || define('BASE_PATH', getenv('BASE_PATH') ?: realpath(dirname(__FILE__) . '/../..'));
+use Phalcon\Config;
+
+defined('BASE_PATH') || define('BASE_PATH', getenv('BASE_PATH') ?: dirname(dirname(__DIR__)) . '');
 defined('APP_PATH') || define('APP_PATH', BASE_PATH . '/app');
 
-return new \Phalcon\Config([
+return new Config([
 //        'database' => [
 //            'adapter' => 'Postgresql',
 //            'host' => 'localhost',
@@ -15,8 +17,8 @@ return new \Phalcon\Config([
 'database' => [
     'mongo' => [
         'host' => 'localhost',
-        'username' => 'root',
-        'password' => 'root',
+        'username' => '',
+        'password' => '',
         'dbname' => 'microtransactions_system',
     ]
 ],
