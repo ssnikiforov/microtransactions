@@ -6,11 +6,10 @@
  * Time: 21:24
  */
 
-use Phalcon\Mvc\Model;
+use Phalcon\Mvc\MongoCollection;
 
-class Users extends Model
+class Accounts extends MongoCollection
 {
     public $id;
-    public $name;
-    public $email;
+    public $balance;
 }

@@ -8,6 +8,7 @@ define('APP_PATH', BASE_PATH . '/app');
 
 include_once APP_PATH . '/config/services.php';
 include_once APP_PATH . '/config/loader.php';
+include_once APP_PATH . '/config/routes.php';
 include_once APP_PATH . '/../vendor/autoload.php';
 
 // Handling the application request
