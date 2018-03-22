@@ -40,44 +40,44 @@
     <h2>Operations</h2>
     <div class="row">
         <div class="column">
-            <form method="post" action="index/deposit">
+            <form method="post" action="/index/deposit">
                 <fieldset>
                     <label for="number">Account Number</label>
-                    <input type="number" min="0" placeholder="" id="number">
+                    <input type="number" min="0" placeholder="" id="number" name="number">
                     <label for="amount">Amount</label>
-                    <input type="number" min="0" placeholder="" id="amount">
+                    <input type="text" placeholder="" id="amount" name="amount">
                     <input class="button-primary" type="submit" value="Deposit">
                 </fieldset>
             </form>
         </div>
         <div class="column">
-            <form method="post" action="index/withdraw">
+            <form method="post" action="/index/withdraw">
                 <fieldset>
                     <label for="number">Account Number</label>
-                    <input type="number" min="0" placeholder="" id="number">
+                    <input type="number" min="0" placeholder="" id="number" name="number">
                     <label for="amount">Amount</label>
-                    <input type="number" min="0" placeholder="" id="amount">
+                    <input type="text" placeholder="" id="amount" name="amount">
                     <input class="button-primary" type="submit" value="Withdraw">
                 </fieldset>
             </form>
         </div>
         <div class="column">
-            <form method="post" action="index/transfer">
+            <form method="post" action="/index/transfer">
                 <fieldset class="container">
                     <div class="row">
                         <div class="column">
                             <label for="from">Source</label>
-                            <input type="number" min="0" placeholder="" id="from">
+                            <input type="number" name="source" min="0" placeholder="" id="from">
                         </div>
                         <div class="column">
                             <label for="to">Destination</label>
-                            <input type="number" min="0" placeholder="" id="to">
+                            <input type="number" name="destination" min="0" placeholder="" id="to">
                         </div>
                     </div>
                     <div class="row">
                         <div class="column">
                             <label for="amount">Amount</label>
-                            <input type="number" min="0" placeholder="" id="amount">
+                            <input type="text" name="amount" placeholder="" id="amount">
                             <input class="button-primary" type="submit" value="Transfer">
                         </div>
                     </div>
@@ -86,8 +86,10 @@
         </div>
     </div>
 
+
     <h2>Last Operation Result</h2>
-    <pre><code>Success</code></pre>
+    <pre><code><?= (empty($error) ? ('success') : ($error)) ?></code></pre>
+
 </div>
 
 </body>

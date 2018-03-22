@@ -40,7 +40,7 @@
     <h2>Operations</h2>
     <div class="row">
         <div class="column">
-            <form method="post" action="index/deposit">
+            <form method="post" action="/index/deposit">
                 <fieldset>
                     <label for="number">Account Number</label>
                     <input type="number" min="0" placeholder="" id="number" name="number">
@@ -51,7 +51,7 @@
             </form>
         </div>
         <div class="column">
-            <form method="post" action="index/withdraw">
+            <form method="post" action="/index/withdraw">
                 <fieldset>
                     <label for="number">Account Number</label>
                     <input type="number" min="0" placeholder="" id="number" name="number">
@@ -62,7 +62,7 @@
             </form>
         </div>
         <div class="column">
-            <form method="post" action="index/transfer">
+            <form method="post" action="/index/transfer">
                 <fieldset class="container">
                     <div class="row">
                         <div class="column">
@@ -86,8 +86,10 @@
         </div>
     </div>
 
+
     <h2>Last Operation Result</h2>
-    <pre><code>Success</code></pre>
+    <pre><code>{{ error | default('success') }}</code></pre>
+
 </div>
 
 </body>

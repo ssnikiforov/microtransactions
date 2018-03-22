@@ -4,6 +4,7 @@
 
 // Create a DI
 use Phalcon\Db\Adapter\MongoDB\Client;
+use Phalcon\Di;
 use Phalcon\Di\FactoryDefault;
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\View\Engine\Volt;
@@ -62,3 +63,5 @@ $di->setShared('collectionManager', function () use ($di) {
 
     return $modelsManager;
 });
+
+Di::setDefault($di);

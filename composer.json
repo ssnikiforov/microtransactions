@@ -40,6 +40,7 @@
     "phalcon/ide-stubs": "*"
   },
   "require": {
-    "phalcon/incubator": "^3.3"
+    "phalcon/incubator": "^3.3",
+    "phpunit/phpunit": "^6.5"
   }
 }
